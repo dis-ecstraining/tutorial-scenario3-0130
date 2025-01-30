@@ -2,7 +2,7 @@
     "executionRoleArn": "arn:aws:iam::058264153553:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
-            "name": "53-ecs15-container-0130",
+            "name": "ecs15-container-0130",
             "image": "058264153553.dkr.ecr.ap-northeast-1.amazonaws.com/t3-e15-0130:latest",
             "essential": true,
             "portMappings": [
