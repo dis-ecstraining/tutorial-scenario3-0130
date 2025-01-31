@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "ecs15-container-0130",
-            "image": "058264153553.dkr.ecr.ap-northeast-1.amazonaws.com/t3-e15-0130:latest",
+            "image": "<IMAGE1_NAME>",
             "essential": true,
             "portMappings": [
                 {
