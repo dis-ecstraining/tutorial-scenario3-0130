@@ -22,5 +22,5 @@
     "networkMode": "awsvpc",
     "cpu": "256",
     "memory": "512",
-    "family": "t3-ecs15-taskdefinition-0130"
+    "family": "t3-taskdefinition-0130"
 }
