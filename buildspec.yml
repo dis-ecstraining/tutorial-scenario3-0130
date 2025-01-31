@@ -6,7 +6,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 058264153553.dkr.ecr.ap-northeast-1.amazonaws.com
-      - REPOSITORY_URI=058264153553.dkr.ecr.ap-northeast-1.amazonaws.com/t3-e15-0130  
+      - REPOSITORY_URI=058264153553.dkr.ecr.ap-northeast-1.amazonaws.com/t-scenario3-0130      
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)      
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
@@ -21,7 +21,9 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - echo Writing image definitions file...
-      - printf '[{"name":"ecs15-container-0130","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - echo Writing image definitions file...      
+      - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
+      
+      
 artifacts:
-    files: imagedefinitions.json
+    files: imageDetail.json
